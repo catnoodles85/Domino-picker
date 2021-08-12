@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+
+}
+
+body{
+    background-color:green;
+}
+
+h1{
+    color:white;
+    filter:drop-shadow(0 0 1rem);
+}
+ .domino-list{
+     display:flex;
+     flex-direction: row;
+     flex-wrap:wrap;
+    }
+    
+.domino-list > li {
+    list-style-type: none;
+    font-size: 5rem;
+    transition: transform 1s;
+     }
+
+.domino-list > li:hover {
+    
+  transform: scale(1.5);
+   
+}
+
+.selected{
+         color:white;
+         filter:drop-shadow(0 0 0.25rem white);
+         
+        }
