@@ -8,21 +8,42 @@ function getRandomNumber (min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-let dominoList = document.querySelectorAll(".domino-list > li")
-console.log(dominoList)
+let dominoCharacters = "🁣🁤🁥🁦🁧🁨🁩🁪🁫🁬🁭🁮🁯🁰🁱🁲🁳🁴🁵🁶🁷🁸🁹🁺🁻🁼🁽🁾🁿🂀🂁🂂🂃🂄🂅🂆🂇🂈🂉🂊🂋🂌🂍🂎🂏🂐🂑🂒🂓"
+let dominoList = Array.from(dominoCharacters)
+console.log(dominoList);
+
+
+
 
 let firstIndex = 0
 let lastIndex = dominoList.length - 1
-// I want a random number between firstIndex and lastIndex
 let randomIndex = getRandomNumber(firstIndex, lastIndex)
-let randomDominoElement = dominoList[randomIndex]
-console.log(randomDominoElement);
-
-randomDominoElement.classList.add("selected");
- 
+let randomDominoCharacter = dominoList[randomIndex]
 
 
-//creating a new element in javascript
-//<img =src="whatever the path is.jpg"> source attribute is a must.
-//let element = document.createElement("img");
+
+console.log(randomDominoCharacter);
+
+
+for(let index = 0; index < dominoList.length ; index +=1){
+let currentdomino = dominoList[index]    
+
+
+let dominoElement = document.createElement("div") // <div></div>
+dominoElement.append(currentdomino)       // <div>🁶</div>
+dominoElement.classList.add("domino") // <div class="domino selected">🁶</div>
+
+let mainElement = document.querySelector("main") //<main> tag
+console.log(mainElement)
+mainElement.append(dominoElement)// <main><div class="domino selected"</div>
+
+if(currentdomino === randomDominoCharacter){
+    dominoElement.classList.add("selected");
+}
+
+}
+
+
+
+
 
